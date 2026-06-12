@@ -10,7 +10,7 @@ void TaskView::render()
 
     std::cout << "\n";
     std::cout << "+----------------------------------+\n";
-    std::cout << "|  Task List (" << std::setw(3) << tasks.size() << " items)          |\n";
+    std::cout << "|  Task List (" << std::right << std::setw(3) << tasks.size() << " items)          |\n";
     std::cout << "+----------------------------------+\n";
 
     if (tasks.empty())
@@ -22,8 +22,8 @@ void TaskView::render()
         for (const auto& t : tasks)
         {
             char status = t.done ? 'X' : ' ';
-            std::cout << "| [" << std::setw(3) << t.id << "] [" << status << "] "
-                      << std::left << std::setw(20) << t.title << " |\n";
+            std::cout << "| [" << std::right << std::setw(3) << t.id << "] [" << status << "] "
+                      << std::left << std::setw(20) << t.title << std::right << " |\n";
         }
     }
 
